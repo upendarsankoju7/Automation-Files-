@@ -1,0 +1,38 @@
+package Automation_Opencart;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.WebDriver;
+public class Automation_Class_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//ChromeDriver driver=new ChromeDriver();
+		//Opening The Broswer 
+		
+		//WebDriver driver=new ChromeDriver();
+		
+		WebDriver driver=new EdgeDriver();
+		
+		//open url  
+		 driver.get("https://www.facebook.com/");
+		 
+		//Verfying the Tittle 
+		 
+		 String act_tittle=driver.getTitle(); 
+		 
+		 if (act_tittle.equals("OpenCart - Open Source Shopping Cart Solution")) 
+		 {
+			 System.out.println("Test Passed");
+		 } 
+		 else {
+			 
+			 System.out.println("Test Failed");
+		 }
+		
+		// Closing the Broswer
+		 driver.quit();
+	}
+
+}
