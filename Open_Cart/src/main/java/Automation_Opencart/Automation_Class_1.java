@@ -21,19 +21,19 @@ public class Automation_Class_1 {
         // WebDriver driver = new EdgeDriver();
 
         // Opening the Flipkart website using the get() method
-           driver.get("https://www.flipkart.com/");
+           driver.get("https://demo.opencart.com/");
         
         // Storing the actual title of the webpage in a variable
             String act_title = driver.getTitle();
 
         // Verifying if the actual title matches the expected title
-         if (act_title.equals("Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!")) {
+         if (act_title.equals("Your Store")) {
             System.out.println("Test Passed");  // If titles match, print "Test Passed"
          } else {
             System.out.println("Test Failed");  // If titles don't match, print "Test Failed"
          }
 
         // Closing the browser session using quit() to free up resources
-        driver.quit();
+        //driver.quit();
     }
 }

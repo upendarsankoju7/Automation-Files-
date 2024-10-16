@@ -1,0 +1,73 @@
+package Automation_Opencart;
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Locators_Class_1 {
+
+    public static void main(String[] args) {
+        // Step 1: Initialize the Chrome WebDriver
+        WebDriver driver = new ChromeDriver();
+        
+        // Step 2: Open the demo OpenCart website
+        driver.get("https://demo.opencart.com/");
+
+        /*
+         * Using 'name' locator to find elements
+         * Example: Locate the search box by its 'name' attribute and input the text "Macbook".
+         */
+        // driver.findElement(By.name("search")).sendKeys("Macbook");
+
+        /*
+         * Alternatively, the above code can be done using WebElement for reusability.
+         * Uncomment the code below for this approach:
+         */
+        // WebElement searchBox = driver.findElement(By.name("search"));
+        // searchBox.sendKeys("Macbook");
+
+        /*
+         * Using 'id' locator to find elements
+         * Example: Verify if the logo is displayed by locating it using its 'id' attribute.
+         */
+        // boolean status = driver.findElement(By.id("logo")).isDisplayed();
+        // System.out.println("Logo Display Status: " + status);
+
+        /*
+         * Using 'linkText' and 'partialLinkText' locators
+         * These locators are only for hyperlink elements (<a> tags).
+         * Example 1: Find and click on the "Tablets" link using linkText.
+         */
+        // driver.findElement(By.linkText("Tablets")).click();
+
+        /*
+         * Example 2: Find and click on a link with partial text "Tab" using partialLinkText.
+         */
+        // driver.findElement(By.partialLinkText("Tab")).click();
+
+        /*
+         * Using 'className' locator to find multiple elements
+         * Example: Locate all elements with the class name "list-inline-item" and print the count.
+         */
+        // List<WebElement> headerLinks = driver.findElements(By.className("list-inline-item"));
+        // System.out.println("Number of Header Links: " + headerLinks.size());
+
+        /*
+         * Using 'tagName' locator to find elements based on their HTML tag
+         * Example 1: Find all <a> (anchor) tags and print the total count.
+         */
+        List<WebElement> anchorTags = driver.findElements(By.tagName("a"));
+        System.out.println("Total Anchor Tags: " + anchorTags.size());
+
+        /*
+         * Example 2: Find all <img> (image) tags and print the total count.
+         */
+        List<WebElement> imageTags = driver.findElements(By.tagName("img"));
+        System.out.println("Total Image Tags: " + imageTags.size());
+
+        // Step 3: Close the browser session
+        driver.quit();
+    }
+}
