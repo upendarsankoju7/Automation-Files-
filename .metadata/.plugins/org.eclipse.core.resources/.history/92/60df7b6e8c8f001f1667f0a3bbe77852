@@ -1,0 +1,60 @@
+package Automation_Opencart;  // Package declaration for organizing related classes and interfaces
+
+// Importing necessary Selenium libraries for browser automation
+import org.openqa.selenium.By;  // Provides methods to locate elements within a web page
+import org.openqa.selenium.WebDriver;  // Interface to control a browser instance
+import org.openqa.selenium.chrome.ChromeDriver;  // Class to instantiate a Chrome browser
+
+public class Xpath_1 {  // Class declaration
+
+    // Main method – Entry point of the Java program
+    public static void main(String[] args) {
+
+        // Set the path to the ChromeDriver executable (required if not set in system PATH)
+        // Example: System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        
+        // Instantiate a new ChromeDriver object to open the Chrome browser
+        WebDriver driver = new ChromeDriver();  
+
+        // Navigate to the OpenCart demo website using the get() method
+        driver.get("https://demo.opencart.com/");
+
+        // Maximize the browser window to ensure all elements are visible and accessible
+        driver.manage().window().maximize();
+
+        // Example 1: XPath with a Single Attribute
+        // Locate the search input field using a single attribute 'placeholder' 
+        // and enter the text "iphone" in the search field
+        // driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("iphone"); 
+        
+        // Example 2: XPath with Multiple Attributes
+        // Use both 'placeholder' and 'name' attributes to precisely locate the search input field
+        // This helps avoid ambiguity if multiple elements share similar attributes
+        // driver.findElement(By.xpath("//input[@placeholder='Search'][@name='search']")).sendKeys("MacBook"); 
+
+        // Example 3: Using 'and' Operator in XPath
+        // Locate the search input field using both 'placeholder' and 'name' attributes with 'and' operator
+        // If both conditions match, the text "MacBook" is entered in the search field
+       // driver.findElement(By.xpath("//input[@placeholder='Search' and @name='search']")).sendKeys("MacBook");
+
+        // Example 4: Using 'or' Operator in XPath (Uncomment to use)
+        // Locate the search field using either 'placeholder' or a non-existent 'name' attribute 'searching'
+        // This demonstrates how 'or' operator works, but only the first valid match will be used
+        // driver.findElement(By.xpath("//input[@placeholder='Search' or @name='searching']")).sendKeys("MacBook");
+        //xpath with text()
+
+         // driver.findElement(By.xpath("//*[text()='MacBook']")).click();
+          
+        //boolean displaystatus = driver.findElement(By.xpath("//h3[text()='Featured']")).isDisplayed();
+        //System.out.println(displaystatus);
+
+        //Xpath With Contains Method 
+        
+        driver.findElement(By.xpath("//input[contains(@placeholder,'Sea')]")).sendKeys("Iphone");
+          
+        
+
+        // Close the browser after execution (uncomment to enable)
+          //driver.quit();
+    }
+}

@@ -1,0 +1,39 @@
+package Automation_Opencart;  // Package declaration for organizing the code
+
+// Importing necessary Selenium libraries
+import org.openqa.selenium.By;  // Provides methods to locate elements within a web page
+import org.openqa.selenium.WebDriver;  // Interface to control a web browser instance
+import org.openqa.selenium.chrome.ChromeDriver;  // Class to initiate a Chrome browser instance
+
+public class Xpath_1 {  // Class declaration
+
+    public static void main(String[] args) {  // Main method - entry point of the Java program
+
+        // Instantiate a new ChromeDriver to open the Chrome browser
+        WebDriver driver = new ChromeDriver();  
+
+        // Navigate to the OpenCart demo website
+        driver.get("https://demo.opencart.com/");
+
+        // Maximize the browser window to ensure elements are properly visible
+        driver.manage().window().maximize();
+        
+        // Example 1: Xpath with a Single Attribute
+        // Locate the search input field using a single attribute (placeholder) and enter "iphone"
+        // driver.findElement(By.xpath("//input[@placeholder='Search']")).sendKeys("iphone"); 
+        
+        // Example 2: Xpath with Multiple Attributes
+        // Locate the search input field using both the 'placeholder' and 'name' attributes
+        // This ensures more precise element identification and sends "MacBook" as input
+      //  driver.findElement(By.xpath("//input[@placeholder='Search'][@name='search']")).sendKeys("MacBook"); 
+        
+        // Using With And & or Opeartors finding the xpath 
+        
+        //driver.findElement(By.xpath("//input[@placeholder='Search'] and [@name='search']")).sendKeys("MacBook");
+        
+        driver.findElement(By.xpath("//input[@placeholder='Search'] or [@name='searching']")).sendKeys("MacBook");
+
+        
+        //driver.quit();
+    }
+}
