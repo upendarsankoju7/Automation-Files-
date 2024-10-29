@@ -1,0 +1,90 @@
+package Automation_Opencart;
+
+import java.time.Duration;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RadioButtons_CheckButtons_1 {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        // Set the path to the ChromeDriver executable if required (only if not in PATH).
+        // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+        // Initialize a new instance of ChromeDriver to control Chrome browser
+        WebDriver driver = new ChromeDriver();
+
+        // Set an implicit wait time of 10 seconds for finding elements
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        // Maximize the browser window
+        driver.manage().window().maximize();
+
+        // Open the target URL
+        driver.get("https://testautomationpractice.blogspot.com/");
+
+        // Find all elements matching the specified XPath (CheckBoxes) and store them in a list
+        List<WebElement> checkBoxes = driver.findElements(By.xpath("//input[@class='form-check-input' and @type='checkbox']"));
+
+        // Print the number of CheckBoxes found on the page
+        System.out.println("Number of CheckBoxes = " + checkBoxes.size());
+
+
+
+            // Selecting all checkboxes
+            /*
+            for (int i = 0; i < checkBoxes.size(); i++) {
+                checkBoxes.get(i).click();
+            }
+            */
+
+            // Enhanced for loop to select all checkboxes
+            /*
+            for (WebElement checkbox : checkBoxes) {
+                checkbox.click();
+            }
+            */
+
+            // Selecting last 3 checkboxes using index
+            /*
+            for (int i = checkBoxes.size() - 3; i < checkBoxes.size(); i++) {
+                checkBoxes.get(i).click();
+            }
+            */
+
+            // Selecting first 3 checkboxes
+            /*
+            for (int i = 0; i < 3; i++) {
+                checkBoxes.get(i).click();
+            }
+            */
+
+            // Toggle all checkboxes (if selected, deselect; if not selected, select)
+            /*
+            for (WebElement checkbox : checkBoxes) {
+                if (checkbox.isSelected()) {
+                    checkbox.click(); // Deselect if already selected
+                } else {
+                    checkbox.click(); // Select if not selected
+                }
+            }
+            */
+
+            // Select specific checkboxes by index (e.g., 1st, 3rd, and 6th checkboxes)
+            for (int i = 0; i < checkBoxes.size(); i++) {
+                if (i == 1 || i == 3 || i == 6) {
+                    checkBoxes.get(i).click();
+                }
+            }
+
+            // Optional: wait to observe checkbox selections in the browser (e.g., 6 seconds)
+            Thread.sleep(6000);
+
+            // Close the browser
+            driver.quit();
+        }
+    }
+

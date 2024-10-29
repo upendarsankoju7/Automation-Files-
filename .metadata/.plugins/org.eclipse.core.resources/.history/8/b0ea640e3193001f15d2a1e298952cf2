@@ -1,0 +1,43 @@
+package Automation_Opencart;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Wait_Method_4 {
+
+    public static void main(String[] args) throws MalformedURLException {	
+        // Main method to execute the program
+        
+        // Create an instance of ChromeDriver to open Chrome browser
+        WebDriver driver = new ChromeDriver();
+        
+        // Maximize the browser window
+        driver.manage().window().maximize();
+        
+        // Navigate to the OpenCart demo site
+        driver.navigate().to("https://demo.opencart.com/");
+        
+        // Navigate to the OrangeHRM demo site login page
+        driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
+        // Go back to the previous URL (OpenCart demo site)
+        driver.navigate().back();
+        
+        // Print the current URL after navigating back
+        System.out.println(driver.getCurrentUrl());
+        
+        // Move forward to the OrangeHRM demo site
+        driver.navigate().forward();
+        
+        // Print the current URL after navigating forward
+        System.out.println(driver.getCurrentUrl());
+
+        driver.navigate().refresh();
+        // Close the browser (optional; uncomment if needed)
+        // driver.quit();	
+    }
+}

@@ -1,0 +1,48 @@
+package Automation_Opencart;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriver_Methods_2 {
+
+	public static void main(String[] args) {
+		
+		// Set up WebDriver (ChromeDriver) to control the Chrome browser
+		WebDriver driver = new ChromeDriver();
+		 
+		// Maximize the browser window
+		driver.manage().window().maximize();
+		 
+		// Navigate to the nopCommerce demo store registration page
+		driver.get("https://demo.nopcommerce.com/register?returnUrl=%2F"); 
+		
+		// Check if the nopCommerce logo is displayed on the page
+		boolean log = driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']")).isDisplayed();
+		boolean status = driver.findElement(By.xpath("//*[@id=\"FirstName\"]")).isEnabled();
+		 
+		// Print the status of the logo and "First Name" field
+		System.out.println(log);
+		System.out.println(status);
+
+		// Radio buttons for gender
+		WebElement Male_Rd = driver.findElement(By.xpath("//input[@id='gender-male']"));
+		WebElement female_Rd = driver.findElement(By.xpath("//input[@id='gender-female']"));
+		 
+		System.out.println(Male_Rd.isSelected());
+		System.out.println(female_Rd.isSelected());
+	    
+		System.out.println("After Clicking Male Button:");
+		Male_Rd.click();
+	  
+	    System.out.println(Male_Rd.isSelected()); 
+	    System.out.println(female_Rd.isSelected());
+	    
+	    // Corrected code: Check the newsletter checkbox
+	    WebElement newsletterCheckbox = driver.findElement(By.xpath("//input[@id='Newsletter']"));
+	    boolean News_Button = newsletterCheckbox.isSelected();
+	    System.out.println(News_Button);  // This should now return the correct status (true/false)
+
+	}
+}

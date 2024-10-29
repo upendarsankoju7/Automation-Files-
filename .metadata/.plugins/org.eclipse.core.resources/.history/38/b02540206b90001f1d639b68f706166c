@@ -1,0 +1,40 @@
+package Automation_Opencart;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriver_Methods_2 {
+
+	public static void main(String[] args) {
+		
+		 WebDriver driver = new ChromeDriver();
+		 
+		 driver.manage().window().maximize();
+		 
+		 driver.get("https://demo.nopcommerce.com/register?returnUrl=%2F"); 
+		
+		 //isDisplayed
+		 
+		 //WebElement logo=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']")); 
+		 //System.out.println(logo.isDisplayed());
+		 
+		 //Example-2
+		 boolean log=driver.findElement(By.xpath("//img[@alt='nopCommerce demo store']")).isDisplayed();
+		
+		 boolean   status=driver.findElement(By.xpath("//*[@id=\"FirstName\"]")).isEnabled();
+
+		 
+		 
+		 System.out.println(log);
+
+		//isSelected 
+	 
+		 
+		 
+
+	}
+	
+
+}

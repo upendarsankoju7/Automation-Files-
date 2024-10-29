@@ -1,0 +1,49 @@
+package Automation_Opencart;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Wait_Method_2 {
+
+    public static void main(String[] args) {
+        // Create an instance of ChromeDriver (Opens a new Chrome browser)
+        WebDriver driver = new ChromeDriver();
+
+        // Create a WebDriverWait object to wait up to 10 seconds before throwing an exception
+        WebDriverWait myWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        // Navigate to the OrangeHRM login page
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+
+        // Maximize the browser window
+        driver.manage().window().maximize();
+        
+        // Wait until the Username field is visible (using explicit wait)
+        WebElement Username=myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Username']")));
+
+        Username.sendKeys("Admin");
+       
+        WebElement Password=myWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='Password']")));
+
+        Password.sendKeys("admin123");
+        
+        WebElement Button=myWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
+
+        Button.click();
+
+        
+        
+        // Locate the Username field using XPath and input the text "Admin"
+      //  driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+
+        // Close the driver (optional) after finishing the task (Add this to close the browser)
+        // driver.quit();
+    }
+
+}

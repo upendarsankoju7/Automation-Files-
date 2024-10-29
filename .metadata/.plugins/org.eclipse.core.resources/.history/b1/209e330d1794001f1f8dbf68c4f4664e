@@ -1,0 +1,38 @@
+package Automation_Opencart;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RadioButtons_CheckButtons_1 {
+
+    public static void main(String[] args) {
+        // Initialize a new instance of ChromeDriver to control Chrome browser
+        WebDriver driver = new ChromeDriver();
+
+        // Set an implicit wait time of 10 seconds for finding elements
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        
+        // Maximize the browser window
+        driver.manage().window().maximize();
+
+        // Open the target URL
+        driver.get("https://testautomationpractice.blogspot.com/");
+
+        // Find all elements matching the specified XPath (checkboxes) and store them in a list
+        List <WebElement> checkBoxes = driver.findElements(By.xpath("//input[@class='form-check-input' and @type='checkbox']"));
+
+        // Print the number of checkboxes found on the page
+        System.out.println("Number of CheckBoxes = " + checkBoxes.size());
+    
+        // Close the browser
+        driver.quit();
+    }
+}
+ 
+
+
