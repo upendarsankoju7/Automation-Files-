@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <!-- Model version indicates the POM version being used -->
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- Group ID is the unique identifier for the project -->
+  <groupId>Open_Cart</groupId>
+  
+  <!-- Artifact ID is the name of the project -->
+  <artifactId>Open_Cart</artifactId>
+  
+  <!-- Version specifies the current version of the project -->
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  
+    <!-- Selenium Java dependency for automating browser actions -->
+    <!-- This includes all the required libraries for Selenium -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.25.0</version>
+    </dependency>
+    
+    <!-- Apache POI library for working with Excel files -->
+    <!-- POI dependency for handling Excel file formats like XLS -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.5</version>
+    </dependency>
+
+    <!-- Apache POI library for handling modern Excel file formats -->
+    <!-- POI-Ooxml dependency for handling XLSX file formats -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.5</version>
+    </dependency>
+  
+  </dependencies>
+  
+</project>

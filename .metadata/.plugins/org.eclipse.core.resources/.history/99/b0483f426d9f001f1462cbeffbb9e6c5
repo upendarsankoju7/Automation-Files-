@@ -1,0 +1,49 @@
+package Automation_Opencart;
+
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class KeyBoards_Actions_Example2 {
+
+    public static void main(String[] args) {
+        // Initialize WebDriver for Chrome browser
+        WebDriver driver = new ChromeDriver();
+        
+        // Set an implicit wait for elements to load
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        
+        // Navigate to Google
+        driver.get("https://www.google.com");
+        driver.manage().window().maximize(); // Maximize the browser window
+        
+        // Locate the search bar and enter a search term
+        driver.findElement(By.name("q")).sendKeys("Selenium WebDriver");
+        
+        // Initialize Actions class to handle keyboard actions
+        Actions act = new Actions(driver);
+        
+        // CTRL + A - Select all text in the search bar
+        act.keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).perform();
+        
+        // CTRL + C - Copy the selected text to the clipboard
+        act.keyDown(Keys.CONTROL).sendKeys("C").keyUp(Keys.CONTROL).perform();
+        
+        // CTRL + T - Open a new tab
+        act.keyDown(Keys.CONTROL).sendKeys("T").keyUp(Keys.CONTROL).perform();
+        
+        // Switch to the new tab by iterating through open windows
+        for (String tab : driver.getWindowHandles()) {
+            driver.switchTo().window(tab);
+        }
+        
+        // Paste the copied text into the address bar and press Enter
+        act.keyDown(Keys.CONTROL).sendKeys("V").keyUp(Keys.CONTROL).sendKeys(Keys.ENTER).perform();
+        
+        // Close the browser session
+        driver.quit();
+    }
+}

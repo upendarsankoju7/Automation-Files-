@@ -1,0 +1,54 @@
+package Automation_Opencart;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Slider_Demo {
+
+    public static void main(String[] args) {
+        // Set the path for the ChromeDriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+        
+        // Navigate to the demo URL
+        driver.get("https://www.jqueryscript.net/demo/Price-Range-Slider-jQuery-UI/");
+        
+        // Maximize the browser window
+        driver.manage().window().maximize();
+
+        // Initialize Actions class for performing drag-and-drop operations
+        Actions act = new Actions(driver);
+
+        // Find the minimum slider element
+        WebElement min_slider = driver.findElement(By.xpath("//div[@class='price-range-block']//span[1]"));
+        
+        // Print the default location of the minimum slider
+        System.out.println("Default Location of the min slider: " + min_slider.getLocation()); // Expected output: (58, 249) = (x, y)
+        
+        // Move the min slider to the right by 100 pixels (horizontal offset)
+        act.dragAndDropBy(min_slider, 100, 0).perform();
+        
+        // Print the location of the minimum slider after moving it
+        System.out.println("Location of the min slider after moving: " + min_slider.getLocation()); // Expected output: (157, 249)
+
+        // Find the maximum slider element
+        WebElement max_slider = driver.findElement(By.xpath("//div[@class='price-range-block']//span[2]"));
+        
+        // Print the default location of the maximum slider
+        System.out.println("Default Location of the max slider: " + max_slider.getLocation()); // Expected output: (876, 249)
+        
+        // Move the max slider to the left by 100 pixels (horizontal offset)
+        act.dragAndDropBy(max_slider, -100, 0).perform();
+        
+        // Print the location of the maximum slider after moving it
+        System.out.println("Location of the max slider after moving: " + max_slider.getLocation()); // Expected output: (778, 249)
+
+        // Close the browser
+        driver.quit();
+    }
+}
