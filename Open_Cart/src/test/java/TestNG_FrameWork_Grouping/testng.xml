@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <!-- Group settings: Exclude the 'functional' group -->
+    <groups>
+        <run>
+            <!-- Uncomment to include a group -->
+            <!-- <include name="functional"/> -->
+            <exclude name="functional" />
+        </run>
+    </groups>
+
+    <!-- Test configuration -->
+    <test thread-count="5" name="Test">
+        <classes>
+            <!-- Corrected class names (removed duplicates) -->
+            <class name="TestNG_FrameWork_Grouping.LoginTest" />
+            <class name="TestNG_FrameWork_Grouping.LogoutTest" />
+            <class name="TestNG_FrameWork_Grouping.Payment_Method" />
+        </classes>
+    </test>
+</suite>

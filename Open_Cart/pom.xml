@@ -2,22 +2,23 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   
-  <!-- Model version indicates the POM version being used -->
+  <!-- Model version indicates the version of the Maven POM model being used -->
   <modelVersion>4.0.0</modelVersion>
   
-  <!-- Group ID is the unique identifier for the project -->
+  <!-- Group ID is the unique identifier for the project, typically the base package name -->
   <groupId>Open_Cart</groupId>
   
-  <!-- Artifact ID is the name of the project -->
+  <!-- Artifact ID is the name of the project/module -->
   <artifactId>Open_Cart</artifactId>
   
-  <!-- Version specifies the current version of the project -->
+  <!-- Version specifies the version of the project/module. SNAPSHOT indicates it is in development -->
   <version>0.0.1-SNAPSHOT</version>
   
+  <!-- Dependencies section contains all the libraries required by the project -->
   <dependencies>
   
-    <!-- Selenium Java dependency for automating browser actions -->
-    <!-- This includes all the required libraries for Selenium -->
+    <!-- Selenium Java dependency for automating browser interactions -->
+    <!-- This includes all the required libraries for Selenium WebDriver -->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
@@ -25,7 +26,7 @@
     </dependency>
     
     <!-- Apache POI library for working with Excel files -->
-    <!-- POI dependency for handling Excel file formats like XLS -->
+    <!-- Dependency for handling older Excel file formats (e.g., XLS) -->
     <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi</artifactId>
@@ -33,30 +34,46 @@
     </dependency>
 
     <!-- Apache POI library for handling modern Excel file formats -->
-    <!-- POI-Ooxml dependency for handling XLSX file formats -->
+    <!-- Dependency for handling newer Excel file formats (e.g., XLSX) -->
     <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
         <version>5.2.5</version>
     </dependency>
     
-<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-		<dependency>
-		    <groupId>org.apache.logging.log4j</groupId>
-		    <artifactId>log4j-core</artifactId>
-		    <version>3.0.0-beta2</version>
-		</dependency>
+    <!-- Log4j Core dependency for logging functionality -->
+    <!-- Provides the core implementation of the Log4j 2 logging library -->
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>3.0.0-beta2</version>
+	</dependency>
 
-	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+	<!-- Log4j API dependency for logging functionality -->
+    <!-- Provides the API for the Log4j 2 logging library -->
 	<dependency>
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-api</artifactId>
 	    <version>3.0.0-beta2</version>
 	</dependency>
 
+    <!-- TestNG dependency for writing and managing automated tests -->
+    <!-- Includes features like annotations, assertions, and test configurations -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.10.2</version>
+        <scope>test</scope> <!-- Scope is set to test since it's only needed for testing -->
+    </dependency>
     
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+    <dependency>
+       <groupId>com.aventstack</groupId>
+       <artifactId>extentreports</artifactId>
+      <version>5.1.2</version>
+   </dependency>
+
     
-  
   </dependencies>
   
 </project>

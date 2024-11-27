@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- Specifies the POM model version -->
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- Unique identifier for the project group -->
+  <groupId>Hybrid_FrameWork_Project</groupId>
+  
+  <!-- Name of the artifact produced by the project -->
+  <artifactId>Hybrid_FrameWork_Project</artifactId>
+  
+  <!-- Version of the project -->
+  <version>0.0.1-SNAPSHOT</version>
+
+  <!-- Dependencies used by the project -->
+  <dependencies>
+    <!-- Selenium WebDriver for automation testing -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.25.0</version> <!-- Updated to latest version -->
+    </dependency>
+
+    <!-- Apache POI for working with Microsoft Office files -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>5.2.5</version> <!-- Latest stable version -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.2.5</version> <!-- Latest stable version -->
+    </dependency>
+
+    <!-- Apache Log4j for logging purposes -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.22.0</version> <!-- Latest stable version -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.22.0</version> <!-- Latest stable version -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>2.22.0</version> <!-- Latest stable version -->
+    </dependency>
+
+    <!-- ExtentReports for generating test reports -->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.1.1</version> <!-- Latest stable version -->
+    </dependency>
+
+    <!-- TestNG for test framework -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.8.0</version> <!-- Latest stable version -->
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Commons IO for file operations -->
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.13.0</version> <!-- Latest stable version -->
+    </dependency>
+
+    <!-- Commons Lang3 for additional string and object utilities -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version> <!-- Latest stable version -->
+    </dependency>
+  </dependencies>
+</project>
